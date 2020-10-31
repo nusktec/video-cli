@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
@@ -13,6 +14,13 @@ class MainApis extends Controller
 
     public function live($id)
     {
-        return view('vfx-stream', ['user' => $id]);
+        //check user status
+        $d = file_get_contents("http://192.168.43.161/lv.php?t=s&cmd=get&id=" . $id);
+        $d = json_decode($d, true);
+        if ($d && $d['status'] === true) {
+            return view('vfx-stream', ['data' => $d]);
+        } else {
+            return redirect("404");
+        }
     }
 }
