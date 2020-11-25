@@ -82,7 +82,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
         }
     }
 
-    let user = {classID: 'xxx-xxx-xx9823'}
+    let user = {classID: 'schooltry-'<?php echo $cid; ?>}
     user = JSON.parse(user);
 </script>
 <script src="https://meet.jit.si/external_api.js"></script>
