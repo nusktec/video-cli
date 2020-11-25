@@ -1,7 +1,7 @@
 <html SameSite='none' itemscope itemtype="http://schema.org/Product" prefix="og: http://ogp.me/ns#"
       xmlns="http://www.w3.org/1999/html">
 <?php if (empty(@$_GET['boot']) || !isset($_GET['boot'])) {
-    header("location: /");
+    //header("location: /");
 }
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
@@ -87,7 +87,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
 </script>
 <script src="https://meet.jit.si/external_api.js"></script>
 <script>
-    let appName = "The AppName";
+    let appName = "SchoolTry";
     let appUrl = "url";
     let globalToolBars = [];
     let medialControl = false;
