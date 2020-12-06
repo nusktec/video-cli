@@ -58,7 +58,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
     </div>
     <a onClick="toggleFullscreen()" href="#" target="_blank">
         <div class="watermark leftwatermark"
-             style="z-index: 999999999; background-image: url('https://sites.google.com/site/thisisjustatest2294/_/rsrc/1468742544208/project-resources/image-search/google-image-search/Screen%20Shot%202015-11-28%20at%201.14.27%20PM.png')"></div>
+             style="z-index: 999999999; background-image: url('{{url('/')}}/school_logo_br.png')"></div>
     </a>
     <div id="stream" style="display: none; z-index: 0">
 
@@ -82,12 +82,12 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
         }
     }
 
-    let user = {classID: 'schooltry-'<?php echo $cid; ?>}
-    user = JSON.parse(user);
+    let user = <?php echo json_encode($user); ?>
+    //user = JSON.parse(user);
 </script>
 <script src="https://meet.jit.si/external_api.js"></script>
 <script>
-    let appName = "SchoolTry";
+    let appName = "SchoolTry Virtual";
     let appUrl = "url";
     let globalToolBars = [];
     let medialControl = false;
@@ -97,7 +97,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
     //filter based on user invoked
     if (user.isAdmin === null || user.name === null) {
         //redirect
-        window.location.href = "/";
+        window.location.href = "https://www.schooltry.com/";
     }
     //role selector
     if (user.isAdmin) {
@@ -160,7 +160,7 @@ header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Date in the past
                 enabled: true,
             },
             dropbox: {
-                appKey: 'dpls489hvxt79dv',
+                appKey: '',
                 redirectURI: appUrl
             },
             remoteVideoMenu: {
